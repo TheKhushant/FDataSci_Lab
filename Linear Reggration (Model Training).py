@@ -60,9 +60,17 @@ xtrain.head()
 lr.fit(xtrain,ytrain)			// it will show that our model is ready
 
 
-pred = lr.predict(xtrain)		// to predict the data and get the Output
+pred = lr.predict(xtrain)		// to predict the data and get the Output// known data
 pred
 
 
-					//
+from sklearn.metrics import r2_score			//to check / test the value
+print(r2_score(pred,ytrain))				
+
+
+predytest = lr.predict(xtest)				//to predict the data and get the Output  // unknown data
+predytest
+
+print(r2_score(predytest,ytest))			//to check / test the value
+
 
