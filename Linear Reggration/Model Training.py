@@ -73,4 +73,17 @@ predytest
 
 print(r2_score(predytest,ytest))			//to check / test the value
 
+//visulation of seaborn (heatmap histrogram scatterplot )
+
+sns.displot(df.Salary)			// bar graph using seaborn
+plt.boxplot(df.Salary)   		// using BoxPlot in horizontal
+plt.boxplot(df.Salary, vert = False)	// using BoxPlot in vertical
+sns.boxplot(df.Salary)			// using seabron
+
+
+
+
+
+//(data analytic resume points = powerBi, Sql,machin learning)
+
 
