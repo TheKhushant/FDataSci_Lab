@@ -1,5 +1,6 @@
 # multi varient == multiple Reggration (dono name same hai)
 # ( df = data frame)
+# (R&D Spend == research and development spend)
 
 # code: 
 import pandas as pd
