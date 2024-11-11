@@ -6,3 +6,9 @@
 import pandas as pd
 df = pd.read_csv("50_Startups.csv")
 df.head()
+# enter 
+df.info()
+#enter
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+#enter
