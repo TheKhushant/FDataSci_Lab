@@ -1,5 +1,9 @@
-Practical No. 1:
-Q Introduction to Statistics – Types of Variables and Descriptive Statistics
+Practical No. 1: Introduction to Statistics – Types of Variables and Descriptive Statistics
+Practical No. 2: Introduction to Statistics II- Correlation and Regression Analysis.
+Practical No. 3: Data Preprocessing steps and normalizing data techniques.
+Practical No. 4: Data Visualization using various charts, histogram and boxplots.
+
+                                Q Introduction to Statistics – Types of Variables and Descriptive Statistics
 In data science, variables are key because they represent the different data points we analyze and model. Knowing the types of variables helps organize the data and choose the right statistical methods.
 1.	Types of Variables:
 Variables can be categorized in different ways, each serving a specific purpose in data analysis.
@@ -9,7 +13,6 @@ Variables can be categorized in different ways, each serving a specific purpose 
 •	Interval Variables: Numerical data with equal differences, but no true zero point. Examples: temperature in Celsius, IQ scores.
 
 3.	Based on Data Type:
-
 •	Categorical Variables: They represent groups or categories, which can be either nominal (no specific order) or ordinal (ordered categories).
 •	Numerical Variables: They represent groups or categories, which can be either nominal (no specific order) or ordinal (ordered categories).
 4.	Based on Role in Analysis:
@@ -27,6 +30,7 @@ Descriptive statistics play a crucial role in summarizing and presenting data in
 2.	Variability (Dispersion): Measures that describe how spread out the data is.
 3.	Data Shape: Describes the overall distribution of the data.
 Unlike inferential statistics, which make predictions or generalizations about a larger population, descriptive statistics only describe the dataset at hand without drawing broader conclusions.
+
 Central Tendency:
 Measures of central tendency aim to determine a "typical" or "central" value within a dataset. The three main measures of central tendency include:
 •	Mean: The average value of all the data points.
@@ -36,9 +40,7 @@ Mean:
 The mean is calculated by adding all the values in a dataset and dividing the sum by the total number of data points.
 For example, if the dataset is [2, 4, 6, 8, 10], the mean would be:
 
-
 Median:
-
 The median is the middle value of a dataset when arranged in ascending or descending order.
 •	If there are an odd number of data points, the median is the middle number.
 •	If there are an even number of data points, the median is the average of the two middle numbers.
@@ -55,11 +57,9 @@ The mode refers to the value that occurs most frequently in a dataset.
 
 5.	By calculating these measures, we gain a clearer understanding of typical values (mean), the central point of the data (median), and the most frequent values (mode), which can help us identify trends and patterns within the dataset.
 
-
 Code Implementation:
 import pandas as pd
 import matplotlib.pyplot as plt
-
 
 # Creating a DataFrame with sample data data = {
 'ID': ['P001', 'P002', 'P003', 'P004', 'P005'],
@@ -67,17 +67,13 @@ import matplotlib.pyplot as plt
 'Exercise_Hours': [1, 2, 1.5, 3, 2],
 'Gender': ['Male', 'Female', 'Female', 'Male', 'Female'], 'Number_of_Meals_Per_Day': [3, 4, 3, 5, 3],
 'Age': [25, 30, 28, 35, 22],
-
 'Height_cm': [175, 160, 168, 180, 158],
 'Weight_kg': [70, 60, 65, 80, 55],
 'BMI': [24.0, 23.4, 23.0, 24.7, 22.0]
-
 }
-
 
 # Create DataFrame
 df = pd.DataFrame(data)
-
 
 # Display the dataset
 print("\n Health and Fitness Data Overview ") print(df.to_string(index=False))
@@ -85,37 +81,42 @@ print("\n Health and Fitness Data Overview ") print(df.to_string(index=False))
 # Calculate mean, median, and mode for speciﬁc columns mean_vals = df[['Exercise_Hours', 'BMI', 'Weight_kg']].mean() median_vals = df[['Exercise_Hours', 'BMI', 'Weight_kg']].median()
 mode_vals = df[['Exercise_Hours', 'BMI', 'Weight_kg']].mode().iloc[0]
 
-
 # Combine the central tendencies into a single DataFrame
 central_tendencies = pd.concat([mean_vals, median_vals, mode_vals], axis=1) central_tendencies.columns = ['Mean', 'Median', 'Mode']
-
 # Print central tendencies print("\n Central Tendencies ") print(central_tendencies)
-
 # Visualize the relationship between Exercise Hours and BMI plt.ﬁgure(ﬁgsize=(8, 5))
 plt.scatter(df['Exercise_Hours'], df['BMI'], color='blue', s=100, edgecolor='black', alpha=0.7) plt.title("Relationship between Exercise Hours and BMI", fontsize=14, fontweight='bold') plt.xlabel("Exercise Hours (Ratio Variable)", fontsize=12)
 plt.ylabel("BMI (Dependent Variable)", fontsize=12) plt.grid(True)
 plt.tight_layout() plt.show()
  
-
 Explanation of Code:
-
 1.	Data Creation: We deﬁne a dataset with columns for personal details, exercise habits, and health metrics.
 2.	Descriptive Statistics:
 o	We calculate the mean, median, and mode for Exercise Hours, BMI, and Weight.
-
 o	These measures are compiled into a new DataFrame called central_tendencies.
 3.	Visualization:
 o	A scatter plot is generated to visualize the relationship between Exercise Hours and BMI. This is useful for understanding whether there’s a correlation between how much someone exercises and their BMI.
 
 Output:
 •	The central tendencies (mean, median, mode) will be printed for Exercise Hours, BMI, and Weight.
-
-
 •	The scatter plot will display the relationship between Exercise Hours and BMI.
 
- 
-Practical No. 2: Introduction to Statistics II- Correlation and Regression Analysis.
-Practical No. 2: Introduction to Statistics II – Correlation and Regression Analysis
+
+
+
+
+
+
+
+                                Practical No. 2: Introduction to Statistics II – Correlation and Regression Analysis
+
+
+
+
+
+
+
+
 In this practical, we will explore Correlation and Regression Analysis using Python. Specifically, we will:
 1.	Calculate the Pearson Correlation Coefficient to measure the strength and direction of the relationship between two variables.
 2.	Perform Simple Linear Regression to predict one variable based on another using the equation of a straight line.
@@ -150,9 +151,6 @@ plt.show()
 Output:
 •	Pearson correlation coefficient (r) will be printed, indicating how strongly temperature and ice cream sales are related and a scatter plot with a red line will show the trend.
 
- 
-
-
 2.	Simple Linear Regression:
 In simple linear regression, we model the relationship between a dependent variable y and an independent variable x using the equation:
 y=β0+β1xy = \beta_0 + \beta_1 xy=β0+β1x Where:
@@ -162,18 +160,14 @@ Steps to Perform Simple Linear Regression:
 1.	Calculate the Means of x and y.
 2.	Calculate the Slope (β1\beta_1β1): The slope is computed using the formula: 
 3.	Calculate the Intercept (β0\beta_0β0): The intercept is computed using the formula: 
- 
-4.	Make Predictions using the linear regression equation. import numpy as np
+ 4.	Make Predictions using the linear regression equation. import numpy as np
 
 # Step 1: Sample data for x and y
-
 x = np.array([1, 2, 5, 10, 23, 77, 20, 21]) # Independent variable
 y = np.array([2, 3, 5, 90, 20, 70, 89, 19]) # Dependent variable
 
-
 # Step 2: Calculate the means of x and y x_mean = np.mean(x)
 y_mean = np.mean(y)
-
 
 # Step 3: Calculate the slope (beta1)
 numerator = np.sum((x - x_mean) * (y - y_mean)) denominator = np.sum((x - x_mean)**2)
@@ -181,22 +175,32 @@ beta1 = numerator / denominator
  
 # Step 4: Calculate the intercept (beta0) beta0 = y_mean - beta1 * x_mean
 
-
 # Output the calculated coefficients print(f"Slope (beta1): {beta1}") print(f"Intercept (beta0): {beta0}")
-
 
 # Step 5: Create the linear regression equation and make predictions
 y_pred = beta0 + beta1 * x # Predicted y values based on the regression model
 
-
 # Output the predictions print("Predicted y values:", y_pred) 
-
 Output:
 •	The slope β1\beta_1β1 and intercept β0\beta_0β0 of the regression equation will be printed.
 •	The predicted values of y based on the regression equation will be shown.
 
- 
-Practical No. 3: Data Preprocessing steps and normalizing data techniques.
+
+
+
+
+
+
+
+
+                                                         Practical No. 3: Data Preprocessing steps and normalizing data techniques.
+
+
+
+
+
+
+
 In data science, data preprocessing is a crucial step to prepare data for analysis and modeling. This includes handling missing values, encoding categorical variables, and normalizing data. Proper preprocessing ensures that the dataset is clean and formatted correctly, which can signiﬁcantly improve the performance of machine learning algorithms.
 Key Data Preprocessing Steps:
 1.	Handling Missing Data: Missing values can arise from various reasons, such as incomplete data entries. Common strategies to deal with missing data include:
@@ -261,7 +265,6 @@ print(r2_score(y_train, train_predictions))
 # Step 16: Calculate and display the R2 score for the model on the test data
 print("\nR2 Score on Test Data:") print(r2_score(y_test, test_predictions))
 
-
 Explanation of Code:
 1.	Loading Libraries and Setting Display Options:
 o	pandas, numpy, seaborn, and sklearn libraries are imported. These libraries are essential for data manipulation, statistical analysis, and machine learning modeling.
@@ -295,63 +298,51 @@ o The r2_score() function from sklearn.metrics is used to calculate the R² scor
 
 •	After running the model and making predictions, the R² score for both the training and test sets is displayed. This helps in evaluating whether the model is underﬁtting or overﬁtting. A good model should perform similarly on both the training and test data, indicating that it generalizes well.
 
- 
-Output:
+ Output:
 1.	Display the ﬁrst 10 rows of the dataset to get an initial overview
-
-
- 
-
-
 2.	Checking for missing values
-
-
-
 3.	Display basic info of the dataset after encoding to check data types and structure
-
- 
 4.	Display the correlation matrix to understand relationships between variables
-
-
-
 5.	predictions on the training data to evaluate the model's performance on seen data
-
-
 6.	predictions on the test data to evaluate the model's performance on unseen data
-
-
 7.	display the R^2 score for the model on the training data
-
-
 8.	display the R2 score for the model on the test data
 
 
- 
-Practical No. 4: Data Visualization using various charts, histogram and boxplots.
+
+
+
+
+
+
+
+                                           Practical No. 4: Data Visualization using various charts, histogram and boxplots.
+
+
+
+
+
+
+
+
+
+
 1.	Data Loading and Overview
 In this practical, we will explore the 50_Startups.csv dataset by performing the following steps:
-
 1.	Loading Data: Import the dataset.
 2.	Checking for Missing Data: Check the number of missing values in the dataset.
 3.	Data Information: View the basic information and structure of the dataset.
 4.	Head of the Data: Preview the first few rows of the dataset.
 5.	Correlation: Check the correlation between diﬀerent numerical variables.
 
-
 # Importing necessary libraries import pandas as pd
 import matplotlib.pyplot as plt import seaborn as sns
 # Load the dataset
-
 df = pd.read_csv("50_Startups.csv")
 
-
 # Display basic information about the dataset print("\nMissing Values in the dataset:") print(df.isnull().sum())
-
 # Check basic info of the dataset print("\nDataset Info:") print(df.info())
-
-
 # Display the first few rows print("\nFirst 5 Rows of the Dataset:") print(df.head())
- 
 # Check correlations between numerical columns print("\nCorrelation Matrix:")
 print(df.corr())
 2.	Data Cleaning & Exploration
@@ -390,37 +381,19 @@ plt.show()
  
 Output:
 1.	Missing Values:
- 
-
 2.	Correlation Matrix:
-
-
 3.	Scatter Plots:
 o	Visualizes the relationships between:
 	R&D Spend vs Profit
-
-
- 
 	Administration vs Profit
-
- 
-
 	Marketing Spend vs Profit
-
-
- 
 4.	Boxplot and Histogram:
 o	Shows the distribution of R&D Spend with the boxplot and histogram.
- 
-
 5.	Heatmap:
 o	A correlation heatmap showing the strength and direction of relationships between variables.
-
- 
 Email 		: 24wankhedek@rbunagpur.in
 Name 		: Khushant Wankhede
 Section		: B
 Sem 		: 1 sem
 CLASS 		: MCA AI ML
 Roll Number	: 29
-
